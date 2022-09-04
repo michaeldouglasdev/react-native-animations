@@ -1,0 +1,23 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",     /* Recommended React Native TSConfig base */
+
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["dom", "dom.iterable", "ES2018"],
+    "allowJs": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    "isolatedModules": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "keyofStringsOnly": true,
+    "resolveJsonModule": true,
+    "types": ["jest", "styled-components-react-native"],
+    "noImplicitAny": false
+  },
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
+}
