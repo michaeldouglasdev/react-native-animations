@@ -12,6 +12,11 @@ import { BannerListPage } from './src/pages/banner/banner';
 import { HomePage } from './src/pages/home/home';
 import { SnapchatPage } from './src/pages/snapchat/snapchat';
 import { SnapchatDetailPage, SnapchatDetailPageProps } from './src/pages/snapchat/snapchat-detail';
+import { PhoneRingPage } from './src/pages/phone-ring/phone-ring';
+import { ArtsListPage } from './src/pages/arts-list/arts-list';
+import { GmailPage } from './src/pages/gmail/gmail';
+import { FollowingBallPage } from './src/pages/following-balls/following-ball';
+import { PizzeriaPage } from './src/pages/pizzeria/pizzeria';
 
 const Stack = createSharedElementStackNavigator<NavigationStackProps>();
 
@@ -45,6 +50,11 @@ export type NavigationStackProps = {
   SnapchatPage: undefined;
   SnapchatDetailPage: SnapchatDetailPageProps;
   UserListPage: undefined;
+  PhoneRingPage: undefined;
+  ArtsListPage: undefined;
+  GmailPage: undefined;
+  FollowingBallPage: undefined;
+  PizzeriaPage: undefined;
 };
 
 export type NavigationRouteProps<T extends keyof NavigationStackProps> = RouteProp<NavigationStackProps, T>
@@ -82,7 +92,12 @@ export const App: React.FC = () => {
           },
           headerBackTitleVisible: false,
         }}/>
-        <Stack.Screen name="TravelListPage" component={TravelListPage}/>
+        <Stack.Screen name="PhoneRingPage" component={PhoneRingPage} />
+        <Stack.Screen name="ArtsListPage" component={ArtsListPage} />
+        <Stack.Screen name="GmailPage" component={GmailPage} />
+        <Stack.Screen name="FollowingBallPage" component={FollowingBallPage} />
+        <Stack.Screen name="PizzeriaPage" component={PizzeriaPage} />
+        <Stack.Screen name="TravelListPage" component={TravelListPage} />
         <Stack.Screen name="TravelDetailPage" component={TravelDetailPage} options={{
           gestureEnabled: true,
           headerBackTitleVisible: false,

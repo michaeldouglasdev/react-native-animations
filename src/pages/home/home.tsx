@@ -19,37 +19,58 @@ export const HomePage: React.FC = () => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <ScrollView>
-      <TouchableOpacity onPress={() => navigation.navigate("ParallaxPage")}>
+        <TouchableOpacity onPress={() => navigation.navigate("ParallaxPage")}>
+            <ScreenItem>
+              <Text>Parallax</Text>
+            </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("TravelListPage")}>
           <ScreenItem>
-            <Text>Parallax</Text>
+            <Text>Parallax + Shared Element</Text>
+            </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("CreditCardListPage")}>
+          <ScreenItem>
+          <Text>CreditCard List + Scroll Behind</Text>
+            </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("UserListPage")}>
+          <ScreenItem>
+            <Text>User List + Scale</Text>
+            </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("BannersListPage")}>
+          <ScreenItem>
+          <Text>Banner Stacked List</Text>
+            </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("SnapchatPage")}>
+          <ScreenItem>
+          <Text>Snapchat</Text>
+            </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("PhoneRingPage")}>
+          <ScreenItem>
+            <Text>PhoneRing</Text>
           </ScreenItem>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("TravelListPage")}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ArtsListPage")}>
+          <ScreenItem>
+            <Text>ArtsList</Text>
+          </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("GmailPage")}>
+          <ScreenItem>
+            <Text>Gmail - Swipe to delete</Text>
+          </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("FollowingBallPage")}>
         <ScreenItem>
-          <Text>Parallax + Shared Element</Text>
-          </ScreenItem>
+          <Text>FollowingBalls</Text>
+        </ScreenItem>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("CreditCardListPage")}>
-        <ScreenItem>
-        <Text>CreditCard List + Scroll Behind</Text>
-          </ScreenItem>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("UserListPage")}>
-        <ScreenItem>
-          <Text>User List + Scale</Text>
-          </ScreenItem>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("BannersListPage")}>
-        <ScreenItem>
-        <Text>Banner Stacked List</Text>
-          </ScreenItem>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("SnapchatPage")}>
-        <ScreenItem>
-        <Text>Snapchat</Text>
-          </ScreenItem>
-      </TouchableOpacity>
-      </ScrollView>
+
+    </ScrollView>
 
 
       <Button title='Open Bottomsheet' onPress={handleClickOpenBottomsheet} />

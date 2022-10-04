@@ -48,7 +48,6 @@ export const BannerDetailPage: React.FC = () => {
     }
   }
 
-
   return (
     <BannerDetailPageContainer>
       <SharedElement id={`item.${banner.key}.poster`} style={{flex: 1}}>
