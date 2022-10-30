@@ -17,37 +17,37 @@ export const HomePage: React.FC = () => {
     setVisibleBottomsheet(false);
   }
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <ScrollView>
         <TouchableOpacity onPress={() => navigation.navigate("ParallaxPage")}>
-            <ScreenItem>
-              <Text>Parallax</Text>
-            </ScreenItem>
+          <ScreenItem>
+            <Text>Parallax</Text>
+          </ScreenItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("TravelListPage")}>
           <ScreenItem>
             <Text>Parallax + Shared Element</Text>
-            </ScreenItem>
+          </ScreenItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("CreditCardListPage")}>
           <ScreenItem>
-          <Text>CreditCard List + Scroll Behind</Text>
-            </ScreenItem>
+            <Text>CreditCard List + Scroll Behind</Text>
+          </ScreenItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("UserListPage")}>
           <ScreenItem>
             <Text>User List + Scale</Text>
-            </ScreenItem>
+          </ScreenItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("BannersListPage")}>
           <ScreenItem>
-          <Text>Banner Stacked List</Text>
-            </ScreenItem>
+            <Text>Banner Stacked List</Text>
+          </ScreenItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("SnapchatPage")}>
           <ScreenItem>
-          <Text>Snapchat</Text>
-            </ScreenItem>
+            <Text>Snapchat</Text>
+          </ScreenItem>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("PhoneRingPage")}>
           <ScreenItem>
@@ -64,18 +64,47 @@ export const HomePage: React.FC = () => {
             <Text>Gmail - Swipe to delete</Text>
           </ScreenItem>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("RipplePage")}>
+          <ScreenItem>
+            <Text>Ripple</Text>
+          </ScreenItem>
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("FollowingBallPage")}>
-        <ScreenItem>
-          <Text>FollowingBalls</Text>
-        </ScreenItem>
-      </TouchableOpacity>
-
-    </ScrollView>
+          <ScreenItem>
+            <Text>FollowingBalls</Text>
+          </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("TarotPage")}>
+          <ScreenItem>
+            <Text>Tarot</Text>
+          </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("LoadingShinyCirclePage")}>
+          <ScreenItem>
+            <Text>Loading Shiny Circle</Text>
+          </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("AnimatedBottomBarPage")}>
+          <ScreenItem>
+            <Text>Animated Bottom Bar</Text>
+          </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("LiquidSwipePage")}>
+          <ScreenItem>
+            <Text>Liquid Swipe</Text>
+          </ScreenItem>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("PizzeriaPage")}>
+          <ScreenItem>
+            <Text>Pizzeria</Text>
+          </ScreenItem>
+        </TouchableOpacity>
+      </ScrollView>
 
 
       <Button title='Open Bottomsheet' onPress={handleClickOpenBottomsheet} />
       <BottomSheet isVisible={visibleBottomsheet} onClose={handleClickCloseBottomsheet} title='This is a title'>
-        <View style={{alignItems: 'center'}}>
+        <View style={{ alignItems: 'center' }}>
           <Text>Text 1</Text>
           <Text>Text 2</Text>
           <Text>Text 3</Text>

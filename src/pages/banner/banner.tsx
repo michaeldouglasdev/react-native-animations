@@ -65,7 +65,7 @@ export const BannerListPage: React.FC = () => {
               transform: [{
                 translateY: scrollXAnimated.interpolate({
                   inputRange: [-1, 0, 1],
-                  outputRange: [50, 0,-50]
+                  outputRange: [50, 0, -50]
                 })
               }]
             }}
@@ -92,10 +92,10 @@ export const BannerListPage: React.FC = () => {
             justifyContent: 'center',
             padding: BANNER_ITEM_SPACING * 2,
           }}
-          CellRendererComponent={({ item, index, children, style, ...props}) => {
+          CellRendererComponent={({ item, index, children, style, ...props }) => {
             const newStyle = [
               style,
-              {zIndex: banners.length - index}
+              { zIndex: banners.length - index }
             ]
 
             return (
@@ -104,8 +104,8 @@ export const BannerListPage: React.FC = () => {
               </View>
             )
           }}
-          renderItem={({item, index}) => {
-            const inputRange = [index -1, index, index + 1];
+          renderItem={({ item, index }) => {
+            const inputRange = [index - 1, index, index + 1];
             const translateX = scrollXAnimated.interpolate({
               inputRange,
               outputRange: [BANNER_ITEM_WIDTH * 0.2, 0, -BANNER_ITEM_WIDTH * 0.5],
@@ -136,15 +136,15 @@ export const BannerListPage: React.FC = () => {
                 <TouchableWithoutFeedback onPress={() => navigation.navigate('BannerDetailPage', {
                   banner: banners[selectedIndex]
                 })}>
-                <SharedElement id={`item.${item.key}.poster`}>
-                  <Image
-                    source={{
-                      uri: item.poster,
-                      height: BANNER_ITEM_HEIGHT,
-                      width: BANNER_ITEM_WIDTH,
-                    }}
-                  />
-                </SharedElement>
+                  <SharedElement id={`item.${item.key}.poster`}>
+                    <Image
+                      source={{
+                        uri: item.poster,
+                        height: BANNER_ITEM_HEIGHT,
+                        width: BANNER_ITEM_WIDTH,
+                      }}
+                    />
+                  </SharedElement>
                 </TouchableWithoutFeedback>
               </BannerItem>
             )
@@ -152,7 +152,7 @@ export const BannerListPage: React.FC = () => {
         />
       </Animated.View>
 
-      <Button onPress={() => setActiveIndex(0)} title="Limpar" />
+      <Button onPress={() => setActiveIndex(0)} title="Clear" />
     </BannerListContainer>
   )
 }

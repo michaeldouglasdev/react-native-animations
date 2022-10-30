@@ -1,5 +1,5 @@
 import React from 'react';
-import {  CreditCardListPage } from './src/pages/credit-card/credit-card-list';
+import { CreditCardListPage } from './src/pages/credit-card/credit-card-list';
 import { UserListPage } from './src/pages/user-list/user-list';
 import { ParallaxPage } from './src/pages/parallax/parallax';
 import { NavigationContainer, RouteProp } from '@react-navigation/native';
@@ -17,6 +17,12 @@ import { ArtsListPage } from './src/pages/arts-list/arts-list';
 import { GmailPage } from './src/pages/gmail/gmail';
 import { FollowingBallPage } from './src/pages/following-balls/following-ball';
 import { PizzeriaPage } from './src/pages/pizzeria/pizzeria';
+import { RipplePage } from './src/pages/ripple/ripple';
+import { InstagramLikePage } from './src/pages/instagram-like/instagram-like';
+import { TarotPage } from './src/pages/tarot/tarot';
+import { LoadingShinyCirclePage } from './src/pages/loading-shiny-circle/loading-shiny-circle';
+import { AnimatedBottomBarPage } from './src/pages/animated-bottom-bar/animated-bottom-bar';
+import { LiquidSwipePage } from './src/pages/liquid-swipe/liquid-swipe';
 
 const Stack = createSharedElementStackNavigator<NavigationStackProps>();
 
@@ -55,6 +61,12 @@ export type NavigationStackProps = {
   GmailPage: undefined;
   FollowingBallPage: undefined;
   PizzeriaPage: undefined;
+  RipplePage: undefined;
+  InstagramLikePage: undefined;
+  TarotPage: undefined;
+  LoadingShinyCirclePage: undefined;
+  AnimatedBottomBarPage: undefined;
+  LiquidSwipePage: undefined;
 };
 
 export type NavigationRouteProps<T extends keyof NavigationStackProps> = RouteProp<NavigationStackProps, T>
@@ -65,19 +77,19 @@ export const App: React.FC = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          cardStyle: {backgroundColor: 'transparent'},
+          cardStyle: { backgroundColor: 'transparent' },
           cardOverlayEnabled: true,
         }}
         initialRouteName='HomePage'
       >
         <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="BannersListPage" component={BannerListPage} />
-        <Stack.Screen name="BannerDetailPage" component={BannerDetailPage } sharedElements={(route) => {
-          return  [
+        <Stack.Screen name="BannerDetailPage" component={BannerDetailPage} sharedElements={(route) => {
+          return [
             `item.${route.params.banner.key}.poster`
           ]
-        }}/>
-        <Stack.Screen name="ParallaxPage" component={ParallaxPage}/>
+        }} />
+        <Stack.Screen name="ParallaxPage" component={ParallaxPage} />
         <Stack.Screen name="CreditCardListPage" component={CreditCardListPage} />
         <Stack.Screen name="UserListPage" component={UserListPage} />
         <Stack.Screen name="SnapchatPage" component={SnapchatPage} />
@@ -91,12 +103,23 @@ export const App: React.FC = () => {
             backgroundColor: 'transparent',
           },
           headerBackTitleVisible: false,
-        }}/>
+        }} />
         <Stack.Screen name="PhoneRingPage" component={PhoneRingPage} />
         <Stack.Screen name="ArtsListPage" component={ArtsListPage} />
         <Stack.Screen name="GmailPage" component={GmailPage} />
         <Stack.Screen name="FollowingBallPage" component={FollowingBallPage} />
         <Stack.Screen name="PizzeriaPage" component={PizzeriaPage} />
+        <Stack.Screen name="RipplePage" component={RipplePage} />
+        <Stack.Screen name="InstagramLikePage" component={InstagramLikePage} />
+        <Stack.Screen name="TarotPage" component={TarotPage} />
+        <Stack.Screen name="LoadingShinyCirclePage" component={LoadingShinyCirclePage} />
+        <Stack.Screen name="AnimatedBottomBarPage" component={AnimatedBottomBarPage} options={{
+          cardStyle: {
+            backgroundColor: '#604AE6'
+          }
+        }} />
+
+        <Stack.Screen name="LiquidSwipePage" component={LiquidSwipePage} />
         <Stack.Screen name="TravelListPage" component={TravelListPage} />
         <Stack.Screen name="TravelDetailPage" component={TravelDetailPage} options={{
           gestureEnabled: true,
@@ -123,12 +146,12 @@ export const App: React.FC = () => {
             }
           }*/
         }}
-        sharedElements={(route) => {
-          return [
-            `item.${route.params.item.key}.image`,
-            `item.${route.params.item.key}.location`,
-          ]
-        }}
+          sharedElements={(route) => {
+            return [
+              `item.${route.params.item.key}.image`,
+              `item.${route.params.item.key}.location`,
+            ]
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -19,19 +19,19 @@ interface HBoxProps extends BoxProps {
   noSpacing?: boolean;
 }
 export const VBox = styled.View<VBoxProps>`
-  padding-horizontal: ${({noSpacing}) => noSpacing ? 0 : 16}px;
-  justify-content: ${({justifyContent}) =>
+  padding-horizontal: ${({ noSpacing }) => noSpacing ? 0 : 16}px;
+  justify-content: ${({ justifyContent }) =>
     justifyContent ?? 'flex-start'};
-  align-items: ${({alignItems}) => alignItems ?? 'stretch'};
-  align-self: ${({alignSelf}) => alignSelf ?? 'stretch'};
+  align-items: ${({ alignItems }) => alignItems ?? 'stretch'};
+  align-self: ${({ alignSelf }) => alignSelf ?? 'stretch'};
 
-  ${({expanded}) =>
+  ${({ expanded }) =>
     expanded &&
     css`
       flex: 1;
     `}
 
-  ${({background}) =>
+  ${({ background }) =>
     background &&
     css`
       background: #F5F7FA;
@@ -40,14 +40,14 @@ export const VBox = styled.View<VBoxProps>`
 
 export const HBox = styled.View<HBoxProps>`
   flex-direction: row;
-  justify-content: ${({justifyContent}) =>
+  justify-content: ${({ justifyContent }) =>
     justifyContent ?? 'flex-start'};
-  align-items: ${({alignItems}) => alignItems ?? 'stretch'};
-  flex-wrap: ${({wrap}) => (wrap ? 'wrap' : 'nowrap')};
+  align-items: ${({ alignItems }) => alignItems ?? 'stretch'};
+  flex-wrap: ${({ wrap }) => (wrap ? 'wrap' : 'nowrap')};
   align-content: flex-start;
-  align-self: ${({alignSelf}) => alignSelf ?? 'stretch'};
+  align-self: ${({ alignSelf }) => alignSelf ?? 'stretch'};
 
-  ${({expanded}) =>
+  ${({ expanded }) =>
     expanded &&
     css`
       flex: 1;
@@ -72,5 +72,5 @@ enum VSeparatorSize {
   LARGE = 32,
 }
 export const VSeparator = styled.View<VSeparatorProps>`
-  height: ${({ size}) => VSeparatorSize[size.toLocaleUpperCase()]}px;
+  height: ${({ size }) => size ? VSeparatorSize[size.toLocaleUpperCase()] : 8}px;
 `;

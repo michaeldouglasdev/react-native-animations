@@ -94,10 +94,10 @@ export const PostListPage: React.FC = () => {
               }}
               scrollEnabled={false}
               removeClippedSubviews={false}
-              CellRendererComponent={({ item, index, children, style, ...props}) => {
+              CellRendererComponent={({ item, index, children, style, ...props }) => {
                 const newStyle = [
                   style,
-                  {zIndex: posters.length - index}
+                  { zIndex: posters.length - index }
                 ]
 
                 return (
@@ -106,7 +106,7 @@ export const PostListPage: React.FC = () => {
                   </View>
                 )
               }}
-              renderItem={({item, index}) => {
+              renderItem={({ item, index }) => {
                 const inputRange = [index - 1, index, index + 1];
                 const translateX = scrollXAnimated.interpolate({
                   inputRange,
@@ -126,19 +126,20 @@ export const PostListPage: React.FC = () => {
                     position: 'absolute', left: -ITEM_WIDTH / 2,
                     transform: [
                       {
-                      translateX
+                        translateX
                       },
                       {
                         scale
                       }
                     ],
                     opacity
-                    }}>
+                  }}
+                  >
                     <Image source={{
                       uri: item.poster,
                       width: ITEM_WIDTH,
                       height: ITEM_HEIGHT
-                    }}/>
+                    }} />
                   </Animated.View>
                 )
               }}
