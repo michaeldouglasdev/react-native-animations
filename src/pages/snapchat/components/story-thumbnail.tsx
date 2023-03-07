@@ -33,10 +33,10 @@ export const StoryThumbnail: React.FC<StoryThumbnailProps> = ({ story }) => {
       }}
     >
       <StoryThumbnailImageWrapper style={{ opacity }}>
-        <SharedElement id={story.id} style={{flex: 1}}>
+        <SharedElement id={story.id} style={{ flex: 1 }}>
           <StoryThumbnailImage
             source={story.thumb}
-            style={{alignSelf: 'flex-start'}}
+            style={{ alignSelf: 'flex-start' }}
           />
         </SharedElement>
 

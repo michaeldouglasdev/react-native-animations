@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": 8888,
+      "name": "Pen",
+      "price": 9.99
+    },
+    {
+      "id": 123,
+      "name": "Eraser",
+      "price": 4.00
+    }
+  ]
+}

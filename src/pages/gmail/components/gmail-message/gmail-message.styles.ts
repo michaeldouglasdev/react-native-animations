@@ -1,5 +1,5 @@
 import { Animated } from 'react-native';
-import Reanimated  from'react-native-reanimated'
+import Reanimated from 'react-native-reanimated'
 import styled from 'styled-components/native';
 import { getRandomColor } from '../../../../utils/get-random-color.util';
 import { PhoneRingItemAnimatedWrapperContainer } from '../../../phone-ring/components/phone-ring-item-animated-wrapper.styles';
