@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { StoryModel } from "../models/story.model";
+import { SnapchatStoryModel } from "../models/snaptchat-story.model";
 import Story1 from '../../assets/images/stories/story-1.jpeg';
 import Story2 from '../../assets/images/stories/story-2.jpg'
 import Story3 from '../../assets/images/stories/story-3.jpeg'
@@ -9,8 +9,8 @@ import Story6 from '../../assets/images/stories/story-6.jpeg'
 import Story7 from '../../assets/images/stories/story-7.jpeg'
 import Story8 from '../../assets/images/stories/story-7.mp4'
 
-export const getFakeStories = (): StoryModel[] => {
-  const stories: StoryModel[] = [
+export const getFakeSnapchatStories = (): SnapchatStoryModel[] => {
+  const stories: SnapchatStoryModel[] = [
     {
       id: "2",
       thumb: Story1,

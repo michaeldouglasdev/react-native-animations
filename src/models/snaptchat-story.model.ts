@@ -1,6 +1,6 @@
 import { ImageSourcePropType } from "react-native";
 
-export interface StoryModel {
+export interface SnapchatStoryModel {
   id: string;
   thumb: ImageSourcePropType;
   user: string;

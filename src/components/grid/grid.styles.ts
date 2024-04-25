@@ -63,7 +63,7 @@ export const VDivider = styled.View`
 
 
 interface VSeparatorProps {
-  size: 'small' | 'medium' | 'large'
+  size?: 'small' | 'medium' | 'large'
 }
 
 enum VSeparatorSize {

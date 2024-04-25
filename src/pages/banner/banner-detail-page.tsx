@@ -5,9 +5,9 @@ import { SharedElement } from 'react-navigation-shared-element';
 import { Animated, Dimensions, Easing, TouchableWithoutFeedback } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { PosterModel } from '../../models/poster.model';
-import { NavigationRouteProps } from '../../../App';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useState } from 'react';
+import { NavigationRouteProps } from '../../routes/app.routes';
 
 const { width } = Dimensions.get('screen');
 const { height } = Dimensions.get('screen');
@@ -50,7 +50,7 @@ export const BannerDetailPage: React.FC = () => {
 
   return (
     <BannerDetailPageContainer>
-      <SharedElement id={`item.${banner.key}.poster`} style={{flex: 1}}>
+      <SharedElement id={`item.${banner.key}.poster`} style={{ flex: 1 }}>
         <BannerDetailImage
           source={{
             uri: banner.poster,
@@ -102,9 +102,9 @@ export const BannerDetailPage: React.FC = () => {
                   }
                 ],
               }}
-              >
-                <BannerDetailContentHeaderInterestedButtonText>Interested</BannerDetailContentHeaderInterestedButtonText>
-              </BannerDetailContentHeaderInterestedButton>
+            >
+              <BannerDetailContentHeaderInterestedButtonText>Interested</BannerDetailContentHeaderInterestedButtonText>
+            </BannerDetailContentHeaderInterestedButton>
           </TouchableWithoutFeedback>
         </BannerDetailContentHeader>
 

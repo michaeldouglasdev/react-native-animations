@@ -2,8 +2,8 @@ import { useRoute } from '@react-navigation/native';
 import React, { useEffect, useRef } from 'react';
 import { Animated, FlatList, Image, StyleSheet, View, Dimensions, Text } from 'react-native';
 import { SharedElement } from 'react-navigation-shared-element';
-import { NavigationRouteProps } from '../../../App';
 import { TravelModel } from '../../models/travel.model';
+import { NavigationRouteProps } from '../../routes/app.routes';
 import { SPACING } from './travel';
 import { TravelDetailActitivies, TravelDetailActivitiesText, TravelDetailContainer, TravelDetailImageWrapper, TravelDetailLocation } from './travel-detail.styles';
 const { width } = Dimensions.get('screen');
@@ -34,12 +34,12 @@ export const TravelDetailPage: React.FC = () => {
       >
         <TravelDetailImageWrapper>
           <Animated.Image
-            source={{uri: item.image}}
+            source={{ uri: item.image }}
             style={[StyleSheet.absoluteFillObject,
-              {
-                resizeMode: 'cover',
-                borderRadius: 0
-              },
+            {
+              resizeMode: 'cover',
+              borderRadius: 0
+            },
             ]}
           />
         </TravelDetailImageWrapper>
@@ -67,11 +67,11 @@ export const TravelDetailPage: React.FC = () => {
           keyExtractor={item => String(item)}
           horizontal
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={{padding: SPACING}}
+          contentContainerStyle={{ padding: SPACING }}
           renderItem={({ item, index }) => {
 
             return (
-              <TravelDetailActivity index={item}/>
+              <TravelDetailActivity index={item} />
             )
           }}
         />
@@ -95,34 +95,34 @@ const TravelDetailActivity: React.FC<TravelDetailActivityProps> = ({ index }) =>
     }).start();
   }, []);
 
-    return (
-      <Animated.View style={{
-        backgroundColor: 'white',
-        padding: SPACING,
-        width: width * 0.33,
-        height: width * 0.5,
-        marginRight: 20,
-        transform: [
-          {
-            scale: animation.interpolate({
-              inputRange: [0, 100],
-              outputRange: [0, 1],
-              extrapolate: 'clamp'
-            })
-          }
-        ],
-        opacity: animation.interpolate({
-          inputRange: [0, 100],
-          outputRange: [0, 1],
-          extrapolate: 'clamp'
-        })
-      }}>
-        <Image
-          source={{uri: 'https://miro.medium.com/max/124/1*qYUvh-EtES8dtgKiBRiLsA.png'}}
-          style={{ width: '100%', height: '70%', resizeMode: 'cover'}}
-        />
-        <Text>Activity #{index + 1}</Text>
-      </Animated.View>
-    )
+  return (
+    <Animated.View style={{
+      backgroundColor: 'white',
+      padding: SPACING,
+      width: width * 0.33,
+      height: width * 0.5,
+      marginRight: 20,
+      transform: [
+        {
+          scale: animation.interpolate({
+            inputRange: [0, 100],
+            outputRange: [0, 1],
+            extrapolate: 'clamp'
+          })
+        }
+      ],
+      opacity: animation.interpolate({
+        inputRange: [0, 100],
+        outputRange: [0, 1],
+        extrapolate: 'clamp'
+      })
+    }}>
+      <Image
+        source={{ uri: 'https://miro.medium.com/max/124/1*qYUvh-EtES8dtgKiBRiLsA.png' }}
+        style={{ width: '100%', height: '70%', resizeMode: 'cover' }}
+      />
+      <Text>Activity #{index + 1}</Text>
+    </Animated.View>
+  )
 
 }
